@@ -1,7 +1,7 @@
 import { browser, expect } from '@wdio/globals'
 
 describe('HomeTask_2', () => {
-    xit('Go to the API page', async () => {
+    it('Go to the API page', async () => {
         await browser.setWindowSize(1440, 1000);
         await browser.url('https://webdriver.io')
 
@@ -30,5 +30,21 @@ describe('HomeTask_2', () => {
 
         //Get HTML of the link
         console.log('HTML of the footer link', await footerButton.getHTML())
+    })
+
+    it('WaitUntil check', async () => {
+        await browser.setWindowSize(1440, 1000);
+        await browser.url('https://webdriver.io')
+        await $('div a[href="/docs/api"]').click()
+
+        //Scroll to the "Contribute"
+        const header = await $('h2.anchor.anchorTargetStickyNavbar_eDRp')
+        await header.scrollIntoView()
+        await browser.pause(2000)
+
+        //Wait until header is loaded
+        await browser.waitUntil(async () => {
+            return header.isDisplayed();
+        }, 5000, "The 'Contribute' header is not displayed")
     })
 })
