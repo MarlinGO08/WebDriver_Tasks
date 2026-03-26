@@ -46,7 +46,7 @@ describe('HomeTask_4', ()=> {
         expect(browser.url('https://github.com/signup'))
     })
 
-    it.only ('GT-006', async () => {
+    it('GT-006', async () => {
         await browser.url(BASE_URL)
 
         await mainPage.subscribeBtn.scrollIntoView()
@@ -57,5 +57,14 @@ describe('HomeTask_4', ()=> {
         await newsletterPage.clickOnCheckBox()
         await newsletterPage.clickOnSubBtn()
         await expect(browser.url('https://github.com/newsletter/confirmation'))
+    })
+
+    it.only ('GT-007', async () => {
+        await browser.url(BASE_URL)
+
+        mainPage.clickOnPriceBtn()
+        pricingPages.clickOnCompareLink()
+        await browser.pause(5000)
+        expect(pricingPages.headerText.isDisplayed())
     })
 })
