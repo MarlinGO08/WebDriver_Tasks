@@ -1,0 +1,29 @@
+Test Case ID: GT-001
+Summary: Sign Up using invalid e-mail format
+Preconditions: The user is on the Github main page (https://github.com)
+Steps:
+    1. Click the "Enter your email" text field
+    2. Enter the test data
+    3. Click the [Sign up for GitHub] button
+Expected result: The validation message about an e-mail format is shown to user
+Test data: ivalid.format.com
+
+
+Test Case ID: GT-002
+Summary: Sign Up using valid e-mail
+Preconditions: The user is on the Github main page (https://github.com)
+Steps:
+    1. Click the "Enter your email" text field
+    2. Enter the test data
+    3. Click the [Sign up for GitHub] button
+Expected result: The user is redirected to the Sign Up page
+Test data: valid@gmail.com
+
+
+Test Case ID: GT-003
+Summary: Search using the blank Seach Bar 
+Preconditions: The user is on the Github main page (https://github.com)
+Steps:
+    1. Click on the Search Bar
+    2. Press [Enter]
+Expected result: The user is redirected to the Search page
