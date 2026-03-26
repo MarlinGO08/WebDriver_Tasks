@@ -1,5 +1,6 @@
 import { browser, expect } from '@wdio/globals'
 import assert from "assert/strict"
+import { error } from 'console'
 
 const BASE_URL = 'https://github.com'
 
@@ -24,7 +25,7 @@ describe('HomeTask_3', () => {
         await browser.pause(5000)
     })
 
-    it.only('GT-002', async ()=> {
+    it('GT-002', async ()=> {
         await browser.setWindowSize(1440, 1000);
         await browser.url(BASE_URL)
         await browser.pause(2000)
@@ -45,5 +46,28 @@ describe('HomeTask_3', () => {
 
         //Verifying we are on the Sign Up page
         expect(await browser.url('https://github.com/signup'))
+    })
+
+    it('GT-003', async () => {
+        await browser.setWindowSize(1440, 1000);
+        await browser.url(BASE_URL)
+        await browser.pause(1000)
+
+        //Clicking the Search Bar
+        const searchBar = await $('/html/body/div[1]/div[4]/header/div/div[2]/div/div/qbsearch-input/div[1]/button')
+        console.log("Search Bar is clickable :", await searchBar.isClickable())
+        if (await searchBar.isClickable()){
+            await searchBar.click()
+        }else{
+            throw new Error('Search bar is not clickable')
+        }
+        await browser.pause(3000)
+
+        //Pressing [Enter]
+        await browser.keys('Enter')
+        await browser.pause(3000)
+
+        //Verifying we're on the Search page
+        expect(await browser.url('https://github.com/search'))
     })
 })
