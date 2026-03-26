@@ -1,6 +1,9 @@
 class PricingPage {
-    get freeTrialBtn() {return $('/html/body/div[1]/div[5]/main/div[2]/div/div[1]/div[3]/div/div/div/div[3]/div/div/div[1]/a')}
+    get freeTrialBtn() {return $('//a[text()="Start a free trial"]')}
 
+    async clickOnTrialBtn() {
+        await this.freeTrialBtn.click()
+    }
 }
 
 export default new PricingPage()
