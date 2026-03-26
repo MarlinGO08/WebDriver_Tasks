@@ -5,6 +5,8 @@ import SignUpPage from './pages/sign.up.page'
 import mainPage from './pages/main.page'
 import pricingPages from './pages/pricing.pages'
 import enterprisePage from './pages/enterprise.page'
+import newsletterPage from './pages/newsletter.page'
+
 
 
 const BASE_URL = 'https://github.com'
@@ -25,7 +27,7 @@ describe('HomeTask_4', ()=> {
         await browser.pause(5000)
     })
 
-    it.only('GT-005', async () => {
+    it('GT-005', async () => {
         await browser.url(BASE_URL)
 
         mainPage.clickOnPriceBtn()
@@ -42,5 +44,18 @@ describe('HomeTask_4', ()=> {
         enterprisePage.clickOnEnterpriceBtn()
         await browser.pause(5000)
         expect(browser.url('https://github.com/signup'))
+    })
+
+    it.only ('GT-006', async () => {
+        await browser.url(BASE_URL)
+
+        await mainPage.subscribeBtn.scrollIntoView()
+        await mainPage.clickOnSubscribeBtn()
+
+        await newsletterPage.emailField.setValue('test_2@gmail.com')
+        await newsletterPage.clickOnDropDown()
+        await newsletterPage.clickOnCheckBox()
+        await newsletterPage.clickOnSubBtn()
+        await expect(browser.url('https://github.com/newsletter/confirmation'))
     })
 })
