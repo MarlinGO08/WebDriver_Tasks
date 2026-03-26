@@ -39,7 +39,7 @@ Steps:
     3. Click the [Create account] button
 Expected result: The user is redirected to the "Confirm account" page
 Test data:
-    email: test@gmail.com
+    email: test12345@gmail.com
     password: TestPassword123
     username: Test_User
 
