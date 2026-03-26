@@ -27,3 +27,56 @@ Steps:
     1. Click on the Search Bar
     2. Press [Enter]
 Expected result: The user is redirected to the Search page
+
+--------------------------------------------------------------------------------------------
+
+Test Case ID: GT-004
+Summary: Fill the Sign Up form with valid data  
+Preconditions: The user is on the Github main page (https://github.com)
+Steps:
+    1. Click the [Sign Up] button
+    2. Fill the Sign Up form with test data
+    3. Click the [Create account] button
+Expected result: The user is redirected to the "Confirm account" page
+Test data:
+    email: test@gmail.com
+    password: TestPassword123
+    username: Test_User
+
+Test Case ID: GT-005
+Summary: Go to the "Enterprise Plan" page from the Main page 
+Preconditions: The user is on the Github main page (https://github.com)
+Steps:
+    1. Click the "Pricing" link
+    2. Check that the "Try the Copilot-powered platform" 
+    header is avaliable on the "Pricing page"
+    3. Check that the [Start a free trial] button is clickable
+    4. Click the [Start a free trial] button
+    5. Check that the "Pick your trial plan" header is avaliable
+    on the "Enterprise plan" page
+    6. Click the [Enterprise cloud] button
+Expected result: The user is redirected to the Sign Up page after clicking the [Enterprise cloud] button
+
+
+Test Case ID: GT-006
+Summary: Fill the "Subscription" form on the "Newsletter" page
+Preconditions: The user is on the Github main page (https://github.com)
+Steps:
+    1. Scroll down to the [Subscribe] button
+    2. Click the [Subscribe] button 
+    3. Fill the "Work email" field with the test data
+    4. Choose the country from the "Country" dropdown menu
+    5. Click the checkbox
+    6. Click the [Subscribe] button 
+Expected result: The user is redirected to the "Newsletter confirmation" page
+Test data: test_2@gmail.com
+
+
+Test Case ID: GT-007
+Summary: Go to the "Compare Features" page
+Preconditions: The user is on the Github main page (https://github.com)
+Steps:
+    1. Click the "Pricing" link
+    2. Scroll down to the "Compare all features" link
+    3. Check that the "Compare all features" header is avaliable on the page
+Expected result: The "Compare all features" table is shown to the user
